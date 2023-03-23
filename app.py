@@ -6,7 +6,7 @@ text  = st.text_area("Enter Text to Analyse:")
 button = st.button("Generate Output")
 
 def Depression_Bert(text):
-  model = BertForSequenceClassification.from_pretrained("arjunm2305/finetunedBertModelDepression",use_auth_token='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')
+  model = BertForSequenceClassification.from_pretrained("arjunm2305/finetunedBertModelDepression")
   tokenizer = BertTokenizer.from_pretrained("Bert-base-uncased")
   inputs = tokenizer.encode_plus(text, max_length=512, padding='max_length', truncation=True, return_tensors='pt')
   outputs = model(**inputs)
